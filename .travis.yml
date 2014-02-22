@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - 0.8
+
+before_script:
+  - export DISPLAY=:99.0
+  - gem install sass --version "=3.2.12"
+  - gem install compass --version "=0.12.2"
+  - sh -e /etc/init.d/xvfb start
+  - npm -d install --silent
+
+script:
+  - webdriver-manager update
+  - npm run-script test_drone

@@ -1,0 +1,18 @@
+<p>This is the partial for view 2.</p>
+<p>
+  Showing of 'interpolate' filter:
+  {{ 'Current version is v%VERSION%.' | interpolate }}
+</p>
+
+<div class="dropzone" file-drop="[image/png, image/jpeg, image/gif]"
+     file-meta="fileMeta">
+  Drop image or text/* file here
+</div>
+
+<div>{{text}}</div>
+
+<div class="image-container">
+  <img ng-src="{{image}}"/>
+  <span class="file-name">{{fileMeta.name}}</span>
+</div>
+

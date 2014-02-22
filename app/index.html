@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" ng-app="b">
+<head>
+  <meta charset="utf-8">
+  <title>Project B.</title>
+  <!-- build:css({.tmp,app}) css/main.css -->
+  <link rel="stylesheet" href="styles/app.css">
+  <!-- endbuild -->
+</head>
+<body>
+  <ul class="menu">
+    <li><a href="#/view1">view1</a></li>
+    <li><a href="#/view2">view2</a></li>
+  </ul>
+
+  <div ng-view></div>
+
+  <div>Angular B: v<span app-version></span></div>
+
+  <!-- build:js scripts/vendor.js -->
+  <script src="lib/jquery/jquery-1.11.0.min.js"></script>
+  <script src="lib/lodash/lodash.underscore-2.4.1.min.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-route.js"></script>
+  <!-- endbuild -->
+
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/commons/services.js"></script>
+  <script src="scripts/main/view1/view1Ctrl.js"></script>
+  <script src="scripts/main/view2/view2Ctrl.js"></script>
+  <script src="scripts/commons/filters.js"></script>
+  <script src="scripts/commons/directives.js"></script>
+  <script src="scripts/commons/resizeHeightDirective.js"></script>
+  <script src="scripts/commons/files/fileDropDirective.js"></script>
+  <script src="scripts/commons/files/fileReaderService.js"></script>
+  <!-- endbuild -->
+
+</body>
+</html>

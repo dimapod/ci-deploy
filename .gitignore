@@ -1,0 +1,10 @@
+logs/*
+!.gitkeep
+node_modules/
+tmp
+.DS_Store
+.idea
+*.iml
+.sass-cache
+.tmp
+app/styles/app.css
