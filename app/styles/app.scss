@@ -59,6 +59,13 @@
   border: 1px solid;
   display: inline-block;
   cursor: pointer;
+  width: 105px;
+  background-color: aliceblue;
+  text-align: center;
+
+  &:hover {
+    background-color: #2aabd2;
+  }
 }
 
 .tabs-zone {
@@ -68,3 +75,5 @@
   overflow: auto;
   margin-bottom: 20px;
 }
+
+
