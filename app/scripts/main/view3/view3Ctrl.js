@@ -16,7 +16,7 @@ angular.module('b').controller('view3Ctrl', function ($scope, $state, tabManager
     };
 
     $scope.selectTab = function(tab) {
-        $state.go(tab.state, {tabId: tab.id});
+        tabManager.selectTab(tab.id);
     };
 
     $scope.removeTab = function(tab) {

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('b').factory('tabManager', function (tabFactory) {
+angular.module('b').factory('tabManager', function ($state, tabFactory) {
 
     /**
      * Basically TABS.arr & TABS.map contain the same tabs objects
@@ -65,6 +65,15 @@ angular.module('b').factory('tabManager', function (tabFactory) {
         delete TABS.map[id];
     };
 
+    /**
+     * Select a tab
+     * @param id tab id
+     * @returns {boolean}
+     */
+    var selectTab = function (id) {
+        var tab = getTab(id);
+        $state.go(tab.state, {tabId: tab.id});
+    };
 
     /**
      * Public API
@@ -75,6 +84,7 @@ angular.module('b').factory('tabManager', function (tabFactory) {
         addTab: addTab,
         hasTab: hasTab,
         getTab: getTab,
-        removeTab: removeTab
+        removeTab: removeTab,
+        selectTab: selectTab
     };
 });
