@@ -1,4 +1,4 @@
-angular.module('b').controller('view2Ctrl', function ($scope, fileReader, tabManager2Service, $timeout) {
+angular.module('b').controller('view2Ctrl', function ($scope, fileReader, tabManager2Service) {
     $scope.context = {tab: undefined};
 
     $scope.TABS = tabManager2Service.TABS;
@@ -15,12 +15,6 @@ angular.module('b').controller('view2Ctrl', function ($scope, fileReader, tabMan
         tabManager2Service.openNewTab('deployable', new Date().getTime());
     };
 
-    $scope.changeTab = function(tab) {
-        $scope.context.tab = undefined;
-        $timeout(function() {
-            $scope.context.tab = tab;
-        });
-    };
 
 
 /*

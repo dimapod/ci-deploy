@@ -3,8 +3,8 @@
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
-//  margin-bottom: 2em;
-//  padding: 0 0 0.5em;
+  //  margin-bottom: 2em;
+  //  padding: 0 0 0.5em;
 }
 
 .menu:before {
@@ -49,11 +49,9 @@
   }
 }
 
-
 .file-name {
   font-family: Arial;
 }
-
 
 .xl-tab {
   padding: 7px;
@@ -61,4 +59,12 @@
   border: 1px solid;
   display: inline-block;
   cursor: pointer;
+}
+
+.tabs-zone {
+  background-color: aliceblue;
+  width: 1024px;
+  height: 150px;
+  overflow: auto;
+  margin-bottom: 20px;
 }

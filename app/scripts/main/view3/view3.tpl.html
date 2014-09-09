@@ -1,0 +1,16 @@
+<p>This is the partial for view 3.</p>
+
+<div class="tabs-zone">{{TABS}}</div>
+
+
+<button ng-click="addApplicationTab()">Application</button>
+<button ng-click="addVersionTab()">Version</button>
+<button ng-click="addDeployableTab()">Deployable</button>
+
+<div>
+  <div class="xl-tabs" ui-sortable="sortableConfig" ng-model="TABS">
+    <div ng-click="selectTab(tab)" class="xl-tab" ng-repeat="tab in TABS">{{tab.title}} <span ng-click="removeTab(tab)">X</span></div>
+  </div>
+  <div ui-view></div>
+</div>
+
