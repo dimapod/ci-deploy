@@ -10,22 +10,16 @@ angular.module('b').factory('tabFactory', function () {
         }
     };
 
-    var applicationTab = function () {
-        return {
+    var MAP = {
+        application: {
             title: 'Application',
             state: 'view3.application'
-        };
-    };
-
-    var versionTab = function () {
-        return {
+        },
+        version: {
             title: 'Version',
             state: 'view3.version'
-        }
-    };
-
-    var deployableTab = function () {
-        return {
+        },
+        deployable: {
             title: 'Deployable',
             state: 'view3.deployable'
         }
@@ -34,22 +28,13 @@ angular.module('b').factory('tabFactory', function () {
     var newTab = function (type, options) {
         options = options || {};
 
-        var tab = undefined;
-        switch (type) {
-            case 'application':
-                tab = applicationTab();
-                break;
-            case 'version':
-                tab = versionTab();
-                break;
-            case 'deployable':
-                tab = deployableTab();
-                break;
-        }
+        var tabProp = MAP[type];
 
-        if (!tab) {
+        if (!tabProp) {
             return undefined;
         }
+
+        var tab = angular.copy(tabProp);
 
         return angular.extend(tab, baseTab(), options);
     };

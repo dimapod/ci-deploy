@@ -34,6 +34,8 @@ angular.module('b').factory('tabManager', function ($state, tabFactory) {
         // Add to store
         TABS.arr.push(tab);
         TABS.map[id] = tab;
+
+        selectTab(id);
     };
 
     /**
@@ -71,7 +73,13 @@ angular.module('b').factory('tabManager', function ($state, tabFactory) {
      * @returns {boolean}
      */
     var selectTab = function (id) {
+        _.forEach(TABS.arr, function(tab) {
+            tab.selected = false;
+        });
+
         var tab = getTab(id);
+        tab.selected = true;
+
         $state.go(tab.state, {tabId: tab.id});
     };
 
