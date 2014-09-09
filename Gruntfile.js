@@ -236,6 +236,13 @@ module.exports = function (grunt) {
                 dest: '.tmp/css/',
                 src: '{,*/}*.css'
             }
+        },
+
+        'gh-pages': {
+            options: {
+                base: 'dist'
+            },
+            src: ['**']
         }
 
     });

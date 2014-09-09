@@ -1,5 +1,16 @@
 <div resize-height offset="19" style="background: #e8e5e5">
   <p>Content1.</p>
+
+  <button ng-click="addApplicationTab()">Application</button>
+  <button ng-click="addVersionTab()">Version</button>
+  <button ng-click="addDeployableTab()">Deployable</button>
+
+  <tabset>
+    <tab ng-repeat="tab in TABS" heading="{{tab.title}}" active="tab.active" disabled="tab.disabled">
+      <div ng-include="tab.template"></div>
+    </tab>
+  </tabset>
+
 </div>
 
 <div resize-height offset="19" style="background: #f8e5e5">

@@ -1,4 +1,29 @@
-angular.module('b').controller('view2Ctrl', function ($scope, fileReader) {
+angular.module('b').controller('view2Ctrl', function ($scope, fileReader, tabManager2Service, $timeout) {
+    $scope.context = {tab: undefined};
+
+    $scope.TABS = tabManager2Service.TABS;
+
+    $scope.addApplicationTab = function() {
+        tabManager2Service.openNewTab('application', new Date().getTime());
+    };
+
+    $scope.addVersionTab = function() {
+        tabManager2Service.openNewTab('version', new Date().getTime());
+    };
+
+    $scope.addDeployableTab = function() {
+        tabManager2Service.openNewTab('deployable', new Date().getTime());
+    };
+
+    $scope.changeTab = function(tab) {
+        $scope.context.tab = undefined;
+        $timeout(function() {
+            $scope.context.tab = tab;
+        });
+    };
+
+
+/*
     $scope.image = null;
     $scope.imageFileName = '';
 
@@ -18,4 +43,5 @@ angular.module('b').controller('view2Ctrl', function ($scope, fileReader) {
                 console.log("progress", progress);
             });
     });
+*/
 });

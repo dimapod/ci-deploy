@@ -1,4 +1,22 @@
 <p>This is the partial for view 2.</p>
+
+<div>
+  {{context}}
+</div>
+
+
+<button ng-click="addApplicationTab()">Application</button>
+<button ng-click="addVersionTab()">Version</button>
+<button ng-click="addDeployableTab()">Deployable</button>
+
+<div class="xl-tabs">
+  <span ng-click="context.tab = tab" class="xl-tab" ng-repeat="tab in TABS">{{tab.title}}</span>
+  <div ng-include="context.tab.template"></div>
+</div>
+
+
+
+<!--
 <p>
   Showing of 'interpolate' filter:
   {{ 'Current version is v%VERSION%.' | interpolate }}
@@ -15,4 +33,4 @@
   <img ng-src="{{image}}"/>
   <span class="file-name">{{fileMeta.name}}</span>
 </div>
-
+-->
